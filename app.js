@@ -13,7 +13,7 @@ app.set('views', path.join(__dirname, 'views'))
 
 // Public folder setup
 app.use(express.static('public'))
-
+app.use(express.urlencoded({extended:false}))
 app.use(authRoutes)
 
 db.connectToDatabase().then(function(){
